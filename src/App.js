@@ -1,6 +1,10 @@
+import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
+import { Provider } from 'react-redux';
+
 import HomeContainer from './containers/HomeContainer';
 import PageOneContainer from './containers/PageOneContainer';
+import store from './redux/store';
 
 const AppNavigator = createStackNavigator(
   {
@@ -12,6 +16,14 @@ const AppNavigator = createStackNavigator(
   }
 );
 
-const App = createAppContainer(AppNavigator);
+const AppContainer = createAppContainer(AppNavigator);
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <AppContainer />
+    </Provider>
+  );
+}
 
 export default App;

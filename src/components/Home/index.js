@@ -44,7 +44,7 @@ export default class Home extends Component {
                     <FontAwesome5 style={styles.icon} color="#000000" size={50} name={'apple'} />
                 </Text>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>To get started, edit App.js</Text>
+                <Text style={styles.instructions}>To get started, edit App.js.</Text>
                 <Button primary text="Go PageOne" onPress={this.props.goPageOne} />
             </View>
         );
