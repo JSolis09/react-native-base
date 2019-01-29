@@ -1,4 +1,9 @@
-import { DEFAULT_ACTION } from './constants';
-export const defaultAction = (data) => ({
+import { DEFAULT_ACTION, MESSAGE_CHANGED } from './constants';
+export const defaultAction = () => ({
     type: DEFAULT_ACTION
+});
+
+export const changeMessageAction = (message) => ({
+    type: MESSAGE_CHANGED,
+    message
 });

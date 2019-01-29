@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Button } from 'react-native-material-ui';
+import { Button, COLOR } from 'react-native-material-ui';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {StyleSheet, Text, View} from 'react-native';
 
@@ -29,14 +29,25 @@ const styles = StyleSheet.create({
       color: '#333333',
       marginBottom: 5,
     },
+    otherText: {
+      textAlign: 'center',
+      color: COLOR.yellow900,
+    }
   });
 
 export default class Home extends Component {
     static propTypes = {
+        message: PropTypes.string,
         goPageOne: PropTypes.func.isRequired
     };
+
+    goPageOne() {
+        const { navigate } = this.props.navigation;
+        navigate('PageOne');
+    }
     
     render() {
+        const { message } = this.props;
         return(
             <View style={styles.container}>
                 <Text style={styles.icons}>
@@ -45,7 +56,8 @@ export default class Home extends Component {
                 </Text>
                 <Text style={styles.welcome}>Welcome to React Native!</Text>
                 <Text style={styles.instructions}>To get started, edit App.js.</Text>
-                <Button primary text="Go PageOne" onPress={this.props.goPageOne} />
+                <Text style={styles.otherText}>{message}</Text>
+                <Button primary text="Go PageOne" onPress={this.goPageOne.bind(this)} />
             </View>
         );
     }
