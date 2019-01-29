@@ -8,19 +8,20 @@ class HomeContainer extends Component {
         header: null,
     };
 
-    goPageOne() {
-        const { navigate } = this.props.navigation;
-        navigate('PageOne');
+    componentDidMount() {
+        this.props.changeMessage();
     }
 
     render() {
-        return(<Home goPageOne={() => this.goPageOne()} />);
+        return(<Home {...this.props} />);
     }
 }
 
-const mapStateToProps = state => ({});
+const mapStateToProps = state => ({
+    message: state.home.message
+});
 const mapDispatchToProps = dispatch => ({
-    test: (data) => dispatch(defaultAction(data))
+    changeMessage: () => dispatch(defaultAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(HomeContainer);
