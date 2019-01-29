@@ -37,8 +37,7 @@ const styles = StyleSheet.create({
 
 export default class Home extends Component {
     static propTypes = {
-        message: PropTypes.string,
-        goPageOne: PropTypes.func.isRequired
+        message: PropTypes.string
     };
 
     goPageOne() {
