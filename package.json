@@ -6,7 +6,7 @@
     "android:bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "android:device": "npm run android:bundle && react-native run-android",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
+    "test": "jest --no-cache --runInBand"
   },
   "dependencies": {
     "prop-types": "^15.6.2",
