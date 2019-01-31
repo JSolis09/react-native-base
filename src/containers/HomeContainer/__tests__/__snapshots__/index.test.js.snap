@@ -1,0 +1,211 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HomeContainer should render correctly 1`] = `
+<View
+  style={
+    Object {
+      "alignItems": "center",
+      "backgroundColor": "#F5FCFF",
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "margin": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "#90ee02",
+            "fontSize": 50,
+          },
+          Object {
+            "marginLeft": 5,
+            "marginRight": 5,
+          },
+          Object {
+            "fontFamily": "Font Awesome 5 Brands",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {
+            "fontWeight": "400",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+    <Text
+      allowFontScaling={false}
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontSize": 50,
+          },
+          Object {
+            "marginLeft": 5,
+            "marginRight": 5,
+          },
+          Object {
+            "fontFamily": "Font Awesome 5 Brands",
+            "fontStyle": "normal",
+            "fontWeight": "normal",
+          },
+          Object {
+            "fontWeight": "400",
+          },
+        ]
+      }
+    >
+      
+    </Text>
+  </Text>
+  <Text
+    style={
+      Object {
+        "fontSize": 20,
+        "margin": 10,
+        "textAlign": "center",
+      }
+    }
+  >
+    Welcome to React Native!
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#333333",
+        "marginBottom": 5,
+        "textAlign": "center",
+      }
+    }
+  >
+    To get started, edit App.js.
+  </Text>
+  <Text
+    style={
+      Object {
+        "color": "#f57f17",
+        "textAlign": "center",
+      }
+    }
+  >
+    Default Message
+  </Text>
+  <View
+    accessible={true}
+    onLayout={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    pointerEvents="box-only"
+    style={
+      Array [
+        Object {
+          "alignItems": "center",
+          "borderRadius": 2,
+          "flexDirection": "row",
+          "height": 36,
+          "justifyContent": "center",
+          "paddingHorizontal": 16,
+        },
+        undefined,
+        false,
+        false,
+        false,
+        Object {},
+        undefined,
+      ]
+    }
+    testID={null}
+  >
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#000000",
+            "fontSize": 14,
+            "fontWeight": "500",
+          },
+          undefined,
+          false,
+          false,
+          false,
+          Object {
+            "color": "#2196f3",
+          },
+          undefined,
+        ]
+      }
+    >
+      GO PAGEONE
+    </Text>
+    <View
+      pointerEvents="none"
+      style={
+        Array [
+          Object {
+            "bottom": 0,
+            "left": 0,
+            "overflow": "hidden",
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+          },
+          undefined,
+        ]
+      }
+    >
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.87)",
+            "bottom": 0,
+            "left": 0,
+            "opacity": 0,
+            "position": "absolute",
+            "right": 0,
+            "top": 0,
+            "zIndex": 1,
+          }
+        }
+      />
+      <View
+        pointerEvents="none"
+        style={
+          Object {
+            "backgroundColor": "rgba(0, 0, 0, 0.87)",
+            "borderRadius": 100,
+            "height": 200,
+            "left": -100,
+            "opacity": 0.12,
+            "position": "absolute",
+            "top": -100,
+            "transform": Array [
+              Object {
+                "scale": 0,
+              },
+            ],
+            "width": 200,
+            "zIndex": 1,
+          }
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
