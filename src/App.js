@@ -1,11 +1,15 @@
 import React from 'react';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import { Provider } from 'react-redux';
+import store from './redux/store';
 
+import firebase from './firebase';
+import firebaseConfig from './firebase/config.prod';
 import HomeContainer from './containers/HomeContainer';
 import LoginContainer from './containers/LoginContainer';
 import PageOneContainer from './containers/PageOneContainer';
-import store from './redux/store';
+
+firebase.initializeApp(firebaseConfig);
 
 const AppNavigator = createStackNavigator(
   {
