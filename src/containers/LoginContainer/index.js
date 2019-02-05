@@ -1,4 +1,7 @@
 import React, {Component} from 'react';
+import { connect } from "react-redux";
+
+import { loginAction } from './actions';
 import Login from '../../components/Login';
 
 class LoginContainer extends Component {
@@ -11,4 +14,12 @@ class LoginContainer extends Component {
     }
 }
 
-export default LoginContainer;
+const mapStateToProps = state => ({
+    loading: state.auth.loading,
+    alert: state.auth.alert
+});
+const mapDispatchToProps = dispatch => ({
+    login: (email, password) => dispatch(loginAction(email, password))
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

@@ -8,6 +8,7 @@ import firebaseConfig from './firebase/config.prod';
 import HomeContainer from './containers/HomeContainer';
 import LoginContainer from './containers/LoginContainer';
 import PageOneContainer from './containers/PageOneContainer';
+import NavigationService from './utils/NavigationService';
 
 firebase.initializeApp(firebaseConfig);
 
@@ -27,7 +28,9 @@ const AppContainer = createAppContainer(AppNavigator);
 const App = () => {
   return (
     <Provider store={store}>
-      <AppContainer />
+      <AppContainer
+        ref={ navigationRef => NavigationService.setTopLevelNavigator(navigationRef) }
+      />
     </Provider>
   );
 }

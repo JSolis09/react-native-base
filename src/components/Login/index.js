@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
+import PropTypes from 'prop-types';
 import { StackActions, NavigationActions } from 'react-navigation';
 import { StyleSheet, TextInput, View} from 'react-native';
 import { COLOR, Button, Subheader  } from 'react-native-material-ui';
 import SnackBar from 'react-native-snackbar-component';
+import Spinner from 'react-native-loading-spinner-overlay';
 import firebase from '../../firebase';
 
 const styles = StyleSheet.create({
@@ -38,13 +40,26 @@ const styles = StyleSheet.create({
 });
 
 export default class Login extends Component {
+    static propTypes = {
+        alert: PropTypes.shape({
+            visible: PropTypes.bool.isRequired,
+            message: PropTypes.string.isRequired,
+            type: PropTypes.string
+        }),
+        loading: PropTypes.bool.isRequired,
+        login: PropTypes.func.isRequired
+    };
     state = {
         username: '',
-        password: '',
-        alert: {
-            visible: false,
-            message: ''
-        }
+        password: ''
+    };
+
+    getBackgroundColorByType = (type) => {
+        const colors = {
+            'success': COLOR.green500,
+            'error': COLOR.red700
+        };
+        return colors[type] ? colors[type] : null;
     };
 
     onLogin = () => {
@@ -53,37 +68,11 @@ export default class Login extends Component {
             alert('plese enter a correct username and password');
             return;
         }
-        firebase.auth()
-            .signInWithEmailAndPassword(username, password)
-            .then((response) => {
-                this.setState({
-                    alert: {
-                        visible: true,
-                        message: 'Login Succesfull!!'
-                    }
-                });
-                setTimeout(() => this.onCloseAlert(), 2000);
-            });
+        this.props.login(username, password);
     }
 
-    goHome = () => {
-        const resetAction = StackActions.reset({
-            index: 0,
-            actions: [NavigationActions.navigate({ routeName: 'Home' })],
-        });
-        this.props.navigation.dispatch(resetAction);
-    };
-
-    onCloseAlert = () => {
-        const { push } = this.props.navigation;
-        this.setState({
-            alert: { message: '', visible: false }
-        });
-       this.goHome();
-    };
-
     render() {
-        const { alert } = this.state;
+        const { alert, loading } = this.props;
         return(
             <View style={styles.container}>
                 <Subheader style={{ text: styles.subheader}} text="Log In" />
@@ -108,10 +97,15 @@ export default class Login extends Component {
                     text="LOG IN"
                 />
                 <SnackBar
+                    autoHidingTime={3000}
                     visible={alert.visible}
-                    backgroundColor={COLOR.green500}
+                    backgroundColor={this.getBackgroundColorByType(alert.type)}
                     messageColor={COLOR.white}
                     textMessage={alert.message}
+                />
+                <Spinner
+                    visible={loading}
+                    textContent={'...'}
                 />
             </View>
         )
