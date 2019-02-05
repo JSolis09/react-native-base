@@ -7,6 +7,12 @@ class MockApp extends Component {
     }
 }
 
+export const NavigationActions = {
+    navigate: jest.fn(() => {})
+};
+export const StackActions = {
+    reset: jest.fn(() => {})
+};
 export const createStackNavigator = jest.fn(() => {});
 export const createAppContainer = jest.fn(() => MockApp);
 

@@ -3,10 +3,10 @@ import { LOGIN, LOGIN_SUCCESSFUL } from './constants';
 import { StackActions, NavigationActions } from 'react-navigation';
 
 import { loginSuccessfulAction, loginFailedAction } from './actions';
-import firebase from '../../firebase';
+import firebase from '../../firebase/FirebaseService';
 import NavigationService from '../../utils/NavigationService';
 
-function authentication(email, password) {
+export function authentication(email, password) {
     return firebase.auth()
         .signInWithEmailAndPassword(email, password)
         .then(response => response);

@@ -11,6 +11,7 @@ import App from '../src/App';
 import renderer from 'react-test-renderer';
 
 jest.mock('../src/utils/NavigationService');
+jest.mock('../src/firebase/FirebaseService');
 
 describe('App', () => {
   it('renders correctly', () => {
