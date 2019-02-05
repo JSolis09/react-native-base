@@ -4,7 +4,6 @@ import { loginSuccessfulAction } from '../actions';
 
 jest.mock('../../../utils/NavigationService');
 jest.mock('../../../firebase/FirebaseService');
-const firebase = require('../../../firebase/FirebaseService').default;
 const NavigationService = require('../../../utils/NavigationService').default;
 
 describe('LoginContainer Saga', () => {
