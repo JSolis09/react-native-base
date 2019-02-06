@@ -18,7 +18,7 @@ const mapStateToProps = state => ({
     loading: state.auth.loading,
     alert: state.auth.alert
 });
-const mapDispatchToProps = dispatch => ({
+export const mapDispatchToProps = dispatch => ({
     login: (email, password) => dispatch(loginAction(email, password))
 });
 
