@@ -1,11 +1,9 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { StackActions, NavigationActions } from 'react-navigation';
 import { StyleSheet, TextInput, View} from 'react-native';
 import { COLOR, Button, Subheader  } from 'react-native-material-ui';
 import SnackBar from 'react-native-snackbar-component';
 import Spinner from 'react-native-loading-spinner-overlay';
-import firebase from '../../firebase';
 
 const styles = StyleSheet.create({
     container: {
