@@ -10,4 +10,20 @@ describe('Home Component', () => {
         const tree = create(<Home {...props} />).toJSON();
         expect(tree).toMatchSnapshot();
     });
+
+    describe('goPageOne', () => {
+        it('should call navigate with "PageOne" input', () => {
+            const props = {
+                message: 'Default Message',
+                navigation: {
+                    navigate: jest.fn(() => {})
+                }
+            };
+            const tree = create(<Home {...props} />);
+            jest.spyOn(props.navigation, 'navigate');
+            const instance = tree.getInstance();
+            instance.goPageOne();
+            expect(props.navigation.navigate).toHaveBeenCalledWith('PageOne');
+        });
+    });
 });
