@@ -1,4 +1,4 @@
-import { all, call, put, takeEvery } from 'redux-saga/effects';
+import { all, put, takeEvery } from 'redux-saga/effects';
 import { DEFAULT_ACTION } from './constants';
 import { changeMessageAction } from './actions';
 

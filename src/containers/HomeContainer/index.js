@@ -1,9 +1,14 @@
 import React, {Component} from 'react';
-import Home from '../../components/Home';
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
+
+import Home from '../../components/Home';
 import { defaultAction } from './actions'
 
 class HomeContainer extends Component {
+    static propTypes = {
+        changeMessage: PropTypes.func.isRequired
+    };
     static navigationOptions = {
         header: null,
     };
