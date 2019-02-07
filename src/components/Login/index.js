@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { StyleSheet, TextInput, View} from 'react-native';
+import { Alert, StyleSheet, TextInput, View} from 'react-native';
 import { COLOR, Button, Subheader  } from 'react-native-material-ui';
 import SnackBar from 'react-native-snackbar-component';
 import Spinner from 'react-native-loading-spinner-overlay';
@@ -63,11 +63,11 @@ export default class Login extends Component {
     onLogin = () => {
         const { username, password } = this.state;
         if (!username || !password) {
-            alert('plese enter a correct username and password');
+            Alert.alert('Alert', 'plese enter a correct username and password');
             return;
         }
         this.props.login(username, password);
-    }
+    };
 
     render() {
         const { alert, loading } = this.props;

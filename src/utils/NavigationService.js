@@ -2,6 +2,10 @@ import { NavigationActions } from 'react-navigation';
 
 let _navigator;
 
+function getNavigator() {
+  return _navigator;
+}
+
 function setTopLevelNavigator(navigatorRef) {
   _navigator = navigatorRef;
 }
@@ -20,6 +24,7 @@ function dispatchEvent(event) {
 }
 
 export default {
+  getNavigator,
   navigate,
   dispatchEvent,
   setTopLevelNavigator,

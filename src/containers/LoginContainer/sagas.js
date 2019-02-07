@@ -8,8 +8,7 @@ import NavigationService from '../../utils/NavigationService';
 
 export function authentication(email, password) {
     return firebase.auth()
-        .signInWithEmailAndPassword(email, password)
-        .then(response => response);
+        .signInWithEmailAndPassword(email, password);
 }
 
 export function* loginSaga({ auth }) {

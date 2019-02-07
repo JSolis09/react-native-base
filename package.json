@@ -34,7 +34,8 @@
   "jest": {
     "preset": "react-native",
     "collectCoverageFrom": [
-      "src/**/*.js"
+      "src/**/*.js",
+      "!src/firebase/config.js"
     ],
     "coveragePathIgnorePatterns": [
       "/node_modules/"
