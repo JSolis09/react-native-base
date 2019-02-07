@@ -23,26 +23,24 @@ export default function LoginContainerReducer(state = initialState, action) {
                 loading: true
             };
         case LOGIN_SUCCESSFUL:
-            const alertSuccess = {
-                visible: true,
-                message: 'Login Successful!!',
-                type: 'success'
-            };
             return {
                 ...state,
-                alert: alertSuccess,
+                alert: {
+                    visible: true,
+                    message: 'Login Successful!!',
+                    type: 'success'
+                },
                 loading: false,
                 user: action.user
             };
         case LOGIN_FAILED:
-            const alertFailed = {
-                visible: true,
-                message: action.message,
-                type: 'error'
-            };
             return {
                 ...state,
-                alert: alertFailed,
+                alert: {
+                    visible: true,
+                    message: action.message,
+                    type: 'error'
+                },
                 loading: false
             };
         default:
