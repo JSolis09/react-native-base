@@ -5,8 +5,10 @@
   "scripts": {
     "android:bundle": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
     "android:device": "npm run android:bundle && react-native run-android",
+    "lint": "eslint src/**/*.js",
     "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest --no-cache --runInBand",
+    "test": "npm run test:regression -- -u",
+    "test:regression": "npm run lint && jest --no-cache --runInBand",
     "test:coverage": "npm run test -- --coverage"
   },
   "dependencies": {
@@ -26,7 +28,11 @@
   },
   "devDependencies": {
     "babel-core": "7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
     "babel-jest": "24.0.0",
+    "eslint": "^5.13.0",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-react-native": "^3.6.0",
     "jest": "24.0.0",
     "metro-react-native-babel-preset": "0.51.1",
     "react-test-renderer": "16.6.3"

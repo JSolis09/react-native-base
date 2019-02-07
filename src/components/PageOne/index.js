@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import { StyleSheet, Text, View} from 'react-native';
+import { COLOR } from 'react-native-material-ui';
 
 const styles = StyleSheet.create({
     container: {
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#F5FCFF',
+      backgroundColor: COLOR.grey100,
     },
     content: {
         fontSize: 20,

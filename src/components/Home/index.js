@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#F5FCFF',
+      backgroundColor: COLOR.grey100,
     },
     icons: {
         textAlign: 'center',
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     },
     instructions: {
       textAlign: 'center',
-      color: '#333333',
+      color: COLOR.grey900,
       marginBottom: 5,
     },
     otherText: {
@@ -37,7 +37,10 @@ const styles = StyleSheet.create({
 
 export default class Home extends Component {
     static propTypes = {
-        message: PropTypes.string
+        message: PropTypes.string,
+        navigation: PropTypes.shape({
+            navigate: PropTypes.func.isRequired
+        }).isRequired
     };
 
     goPageOne() {
