@@ -6,6 +6,8 @@ import { createStore } from "redux";
 import Reducer from '../../../redux/reducers';
 import HomeContainer from '../index';
 
+jest.mock('../../../components/Home', () => require('../../../components/Home/__mocks__/Home') );
+
 describe('HomeContainer', () => {
     let store = createStore(Reducer);
     it('should render correctly', () => {
