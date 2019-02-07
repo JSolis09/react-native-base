@@ -7,6 +7,10 @@ import Reducer from '../../../redux/reducers';
 import LoginContainer, { mapDispatchToProps } from '../index';
 import { loginAction } from '../actions';
 
+jest.mock('react-native-snackbar-component', () => require('../../../../__mocks__/react-native-snackbar-component'));
+jest.mock('react-native-loading-spinner-overlay', () => require('../../../../__mocks__/react-native-loading-spinner-overlay'));
+jest.mock('../../../components/Login', () => require('../../../components/Login/__mocks__/Login'));
+
 describe('LoginContainer', () => {
     let store = createStore(Reducer);
     it('should render correctly', () => {

@@ -10,16 +10,11 @@ const styles = StyleSheet.create({
       flex: 1,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#F5FCFF',
+      backgroundColor: COLOR.grey100,
     },
     subheader: {
         fontSize: 20,
         color: COLOR.blue500
-    },
-    content: {
-        fontSize: 20,
-        textAlign: 'center',
-        margin: 10,
     },
     input: {
         borderBottomWidth: 1,
